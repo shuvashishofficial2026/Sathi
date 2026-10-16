@@ -1,0 +1,17 @@
+{
+  "note": "Fictional institutions with sandbox bank details. In production this registry would come from institutions' official channels.",
+  "institutions": [
+    {"id": "shu", "name": "Shenzhen Harbour University (Demo)",
+     "aliases": ["Shenzhen Harbour University", "Harbour University Shenzhen", "SHU"],
+     "country": "CN", "currency": "CNY", "bank_name": "Demo Bank of Shenzhen",
+     "account_number": "6222 0202 0011 2233 445", "source": "Bursar's office page (simulated)"},
+    {"id": "kllu", "name": "Kuala Lumpur Lakeside University (Demo)",
+     "aliases": ["KL Lakeside University", "Lakeside University", "KLLU"],
+     "country": "MY", "currency": "MYR", "bank_name": "Demo Bank Malaysia",
+     "account_number": "5140 1234 5678 90", "source": "Finance office page (simulated)"},
+    {"id": "unb", "name": "University of Northbridge (Demo)",
+     "aliases": ["Northbridge University", "University of Northbridge"],
+     "country": "GB", "currency": "GBP", "bank_name": "Demo Bank UK",
+     "account_number": "20-00-00 55779911", "source": "Student finance page (simulated)"}
+  ]
+}

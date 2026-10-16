@@ -1,0 +1,32 @@
+{
+  "note": "Simulated provider archetypes for the sandbox. Not real companies or real prices.",
+  "providers": [
+    {"id": "bankwire", "name": "Bank wire (SWIFT)", "kind": "bank",
+     "fixed_fee_usd": "18", "pct_fee": "0", "fx_margin": "0.015", "receiver_fee_usd": "15",
+     "eta_hours": 72, "min_usd": "10", "max_usd": "50000",
+     "note": "Traditional bank transfer; intermediary banks can deduct fees on arrival."},
+    {"id": "quickremit", "name": "QuickRemit (money transfer operator)", "kind": "mto",
+     "fixed_fee_usd": "4.99", "pct_fee": "0.005", "fx_margin": "0.022",
+     "eta_hours": 24, "min_usd": "1", "max_usd": "3000",
+     "payee_types": ["person"], "purposes": ["living_expenses", "family_support", "rent", "personal"],
+     "note": "Transfers to people (bank account, wallet or cash pickup), not institutions."},
+    {"id": "digisend", "name": "DigiSend (digital transfer)", "kind": "digital",
+     "fixed_fee_usd": "1.50", "pct_fee": "0.0055", "fx_margin": "0.0045",
+     "eta_hours": 4, "min_usd": "1", "max_usd": "5000",
+     "payee_types": ["person", "business"], "purposes": ["living_expenses", "family_support", "rent", "personal"],
+     "note": "Online transfer to a bank account or e-wallet."},
+    {"id": "campuspay", "name": "CampusPay (education payments)", "kind": "edu",
+     "fixed_fee_usd": "0", "pct_fee": "0", "fx_margin": "0.011",
+     "eta_hours": 48, "min_usd": "50", "max_usd": "60000",
+     "payee_types": ["institution"], "purposes": ["tuition"],
+     "note": "Pays universities directly, with the student reference attached."},
+    {"id": "localpay", "name": "Local transfer", "kind": "local",
+     "fixed_fee_usd": "0", "pct_fee": "0", "fx_margin": "0",
+     "eta_hours": 1, "cross_border": false, "same_currency": true,
+     "note": "Same-currency payment inside the country."},
+    {"id": "walletfx", "name": "Sathi wallet FX", "kind": "wallet_fx",
+     "fixed_fee_usd": "0", "pct_fee": "0", "fx_margin": "0.0035",
+     "eta_hours": 0, "conversion_only": true,
+     "note": "Instant conversion between your own wallets."}
+  ]
+}

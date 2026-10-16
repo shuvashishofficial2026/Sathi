@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sathi"
+version = "0.1.0"
+description = "Sathi: an AI cross-border money companion for international students and their families"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["anthropic>=1.13", "streamlit>=1.65", "pandas>=2.2", "PyYAML>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=9", "ruff>=0.17"]
+
+[tool.setuptools]
+packages = ["sathi", "sathi.agent"]
+
+[tool.setuptools.package-data]
+sathi = ["data/*.json", "data/*.yaml"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,5 @@
+{
+  "source": "Illustrative sandbox rates, not live market data",
+  "as_of": "2026-10-11T00:00:00+00:00",
+  "usd_rates": {"USD": "1", "BDT": "122.30", "CNY": "7.12", "MYR": "4.21", "GBP": "0.745"}
+}

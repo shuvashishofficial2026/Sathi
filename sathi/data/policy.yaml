@@ -1,0 +1,43 @@
+# Sathi policy configuration. Limits are in USD equivalent.
+# Every rule here is deterministic code in sathi/policy.py; the AI cannot change it.
+
+purposes: [tuition, rent, living_expenses, family_support, personal]
+
+limits_usd:
+  per_transaction: 2500          # above this a payment needs the PIN (step-up)
+  hard_max_per_transaction: 10000
+  daily: 5000
+  monthly: 12000
+  conversion_per_transaction: 1500
+
+velocity:                        # many payments in a short window -> step-up
+  window_minutes: 10
+  max_payments: 3
+
+anomaly:                         # much bigger than usual -> step-up
+  multiplier: 3
+  min_history: 3
+  split_window_hours: 24         # payments to one payee in this window count together
+
+new_payee:
+  cooling_off_hours: 24
+
+quotes:
+  ttl_minutes: 10
+
+sanctions:
+  match_threshold: 0.88
+
+scam:                            # payments drafted from a pasted message
+  deny_at: 60
+
+mandates:
+  max_days: 30
+  max_usd: 2000
+
+corridor_rules:
+  - id: BD_OUTWARD_STUDY
+    label: "Bangladesh study-abroad rule (simulated)"
+    from_currency: BDT
+    purposes: [tuition, living_expenses]
+    requires: student_file
